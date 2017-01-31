@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var env = require('dotenv').config();
+var methodOverride = require('method-override');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -29,7 +30,7 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride('_method'));
 app.use('/', index);
 app.use('/users', users);
 app.use('/movies', movies);
