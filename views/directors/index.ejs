@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+    <h1> List of Directors</h1>
+    <div>
+      <% director.forEach(function(director){ %>
+      <form action="<%'directors/:id' + director.id%>" method="POST">
+      <span><%= director.name %></span>
+      <span><%= director.UpdatedAt %></span>
+    </div>
+    <% }) %>
+  </body>
+</html>

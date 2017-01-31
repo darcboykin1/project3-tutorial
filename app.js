@@ -15,11 +15,16 @@ const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/users.js');
 
 var users = require('./routes/users');
+
 var movies = require('./routes/movies');
 
-var app = express();
 
 require('dotenv').config();
+
+
+var directors = require('./routes/directors');
+
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +53,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use('/', index);
 app.use('/users', users);
+app.use('/directors', directors);
+
 
 app.use('/movies', movies);
 
