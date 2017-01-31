@@ -30,5 +30,10 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
+<<<<<<< HEAD
 # DOTENV
+=======
+node_modules
+
+>>>>>>> add auth routes
 .env
