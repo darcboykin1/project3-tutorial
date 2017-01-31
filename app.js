@@ -7,11 +7,19 @@ var bodyParser = require('body-parser');
 var env = require('dotenv').config();
 var methodOverride = require('method-override');
 
-var index = require('./routes/index');
+const session = require('express-session');
+const passport = require('passport');
+
+const index = require('./routes/index');
+const authRoutes = require('./routes/auth.js');
+const userRoutes = require('./routes/users.js');
+
 var users = require('./routes/users');
 var movies = require('./routes/movies');
 
 var app = express();
+
+require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +30,13 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -33,7 +48,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use('/', index);
 app.use('/users', users);
+
 app.use('/movies', movies);
+
+app.use('/auth', authRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

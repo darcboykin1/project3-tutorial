@@ -30,5 +30,10 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
+
 # DOTENV
+
+node_modules
+
+
 .env
