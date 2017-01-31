@@ -34,6 +34,14 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+router.delete('/:id', function(req, res, next) {
+  models.Movie.destroy({
+    where: {id: req.params.id}
+  }).then(function() {
+    res.redirect('/movies');
+  });
+});
+
 router.get('/:id/edit', function(req, res, next) {
   models.Movie.findById(req.params.id)
   .then(function(movie) {
@@ -52,7 +60,6 @@ router.put('/:id', function(req, res, next) {
     res.redirect('/movies/' + req.params.id)
   });
 });
-
 
 
 module.exports = router;

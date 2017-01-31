@@ -9,5 +9,8 @@
       <li><%= movie.title %></li>
       <li><%= movie.synopsis %></li>
     </ul>
+    <form method="POST" action=<%='/movies/' + movie.id + '?_method=DELETE'%>>
+      <input type="submit" value="Delete">
+    </form>
 </body>
 </html>
