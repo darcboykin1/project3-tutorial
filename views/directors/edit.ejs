@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <h1> <%= etitle %></h1>
+  <div>
+    <form action="<%= '/directors/' + director.id %>" method="PATCH">
+    <div class="edirector">
+      <label> Director Name:
+      <input type="text" name="name" placeholder="<%= director.name%>"></input>
+      </label>
+      <input type="submit" value="Submit"/>
+    </div>
+  </body>
+</html>

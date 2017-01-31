@@ -23,8 +23,11 @@ require('dotenv').config();
 
 
 var directors = require('./routes/directors');
+var director = require('./routes/director');
+// var newdirector = require('./routes/newdirector');
 
 var app = express();
+// require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -54,7 +57,8 @@ app.use(methodOverride('_method'));
 app.use('/', index);
 app.use('/users', users);
 app.use('/directors', directors);
-
+app.use('/:id', director);
+// app.use('/new', newdirector);
 
 app.use('/movies', movies);
 

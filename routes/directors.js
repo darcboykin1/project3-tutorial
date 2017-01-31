@@ -6,15 +6,9 @@ router.get('/', function(req, res, next){
 models.Director.findAll({}).then(function(director){
 res.render('directors/index', {
       director: director,
-      title: 'All Directors',
+      title: 'List of Directors',
       });
     });
   });
-
-  router.get('/:id', function(req, res, next) {
-  models.Director.findById(req.params.id).then(function(director) {
-    res.render('directors/id', { director: director });
-  });
-});
 
 module.exports = router;
