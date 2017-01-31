@@ -1,5 +1,6 @@
 {
   "development": {
+    "user": "jhumphreys",
     "password": null,
     "database": "movies_app_development",
     "host": "127.0.0.1",
