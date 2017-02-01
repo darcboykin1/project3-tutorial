@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <h1> <%= ntitle %> </h1>
+  <div>
+    <form action="<%= '/directors/' + '?_method=PUT'%>" method="POST">
+    <div class="ndirector">
+      <label> Director Name:
+      <input type="text" name="name" placeholder="Director"></input>
+      </label>
+      <input type="submit" value="Submit"/>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+    <h1> <%= title %> </h1>
+      <a href="/directors/new">Add a New Director</a>
+    <div>
+      <% director.forEach(function(director){ %>
+      <ul class="directors">
+      <li><%= director.id %>
+      <a href="<%= '/directors/' + director.id %>"><%=director.name%></a>
+      </li>
+      </ul>
+      <% }) %>
+    </div>
+  </body>
+</html>

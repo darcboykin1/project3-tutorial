@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <h1> <%= etitle %></h1>
+  <div>
+    <form action="<%= '/directors/' + director.id + '?_method=PUT'%>" method="POST">
+    <div class="edirector">
+      <label> Director Name:
+      <input type="text" name="name" placeholder="<%= director.name%>"></input>
+      </label>
+      <input type="submit" value="Save"/>
+      <a href="<%= '/directors/' + director.id %>">Cancel</a>
+    </div>
+  </body>
+</html>

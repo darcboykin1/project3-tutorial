@@ -1,5 +1,4 @@
 'use strict';
-
 var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
@@ -12,13 +11,12 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(
-  config.database,
-  process.env['DATABASE_USERNAME'],
-  config.password,
-  config
-);
+    config.database,
+    process.env['DATABASE_USERNAME'],
+    config.password,
+    config
+  );
 }
-
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
