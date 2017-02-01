@@ -2,9 +2,9 @@
 <html>
   <head>
   </head>
-  <h1> Add a New Director </h1>
+  <h1> <%= ntitle %> </h1>
   <div>
-    <form action="/directors" method="POST">
+    <form action="<%= '/directors/' + '?_method=PUT'%>" method="POST">
     <div class="ndirector">
       <label> Director Name:
       <input type="text" name="name" placeholder="Director"></input>
