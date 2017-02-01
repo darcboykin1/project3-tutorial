@@ -5,10 +5,12 @@
   <title>Document</title>
 </head>
 <body>
+  <ul>
   <% movies.forEach(function(movie) { %>
-    <div>
-   <%= movie.title %>
-    </div>
+    <li>
+   <a href=<%= "/movies/" + movie.id%>><%= movie.title %></a>
+    </li>
   <% }) %>
+  </ul>
 </body>
 </html>
