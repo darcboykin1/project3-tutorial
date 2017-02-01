@@ -13,7 +13,6 @@ router.post('/register', (req, res, next)  => {
   .then((user) => {
     req.login(user, (err) => {
       if (err) return next(err);
-
       res.redirect('/users');
     });
   })
